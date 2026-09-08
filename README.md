@@ -5,8 +5,6 @@ same `script.js` scroll/nav behavior), rebuilt around the Nubra product case stu
 
 ## Screens
 
-All 6 screens generated via Stitch, then exported into Figma for the linked frames.
-
 | # | File | What it shows | Figma |
 |---|------|----------------|-------|
 | 1 | `screens/screen1-current-builder.png` | Today: Advanced Builder, empty/unguided — the pain point | [View](https://www.figma.com/design/M63PY6gp4W72lUhAD3aGKY/Untitled?node-id=1-2&t=C7nLLQO0K4F7uaIn-1) |
@@ -22,8 +20,9 @@ All 6 screens generated via Stitch, then exported into Figma for the linked fram
 nubra-case-study/
 ├── index.html                          # Main case study page (multi-file, for hosting/GitHub Pages)
 ├── styles.css                          # ChargeClarity's design system + benchmark-table/pill/chart-card additions
-├── script.js                           # Scroll progress, nav highlighting, reveal animations (unchanged from ChargeClarity)
+├── script.js                           # Scroll progress, nav highlighting, reveal animations 
 ├── README.md                           # This file
+├── nubra_product_case_study.ipynb      # Complete code of the case study with all visualizations and analysis
 ├── charts/                             # Real matplotlib output, regenerated from nubra_product_case_study.ipynb
 │   ├── funnel-by-segment.png
 │   ├── ab-completion-comparison.png
