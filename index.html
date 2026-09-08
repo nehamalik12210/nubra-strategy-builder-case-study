@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guided Mode — Reducing Beginner Drop-off in Nubra's Strategy Builder | Neha Malik</title>
+  <meta name="description" content="Product case study: a data-driven redesign of Nubra's multi-leg options Strategy Builder, with competitor benchmarking, a PRD, wireframes, and a funnel + A/B analysis. By Neha Malik.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <div class="nav-brand">Guided<span>Mode</span></div>
+      <ul class="nav-links">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#benchmark">Benchmark</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#prd">PRD</a></li>
+        <li><a href="#redesign">Redesign</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Product Case Study · Fintech · Options Trading
+      </div>
+      <h1>Reducing beginner <em>drop-off</em></h1>
+      <p class="hero-subtitle">
+        A data-driven redesign of Nubra's multi-leg Strategy Builder — competitor benchmarking, a PRD, wireframes, and a funnel + A/B analysis to justify the call.
+      </p>
+      <div class="hero-ticker" aria-hidden="true">
+        <span class="hero-ticker-dot"></span>
+        NIFTY 50&nbsp;&nbsp;22,450.20&nbsp;&nbsp;<span class="hero-ticker-up">▲ +0.45%</span>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="icon material-symbols-outlined">person</span>
+          Neha Malik
+        </div>
+        <div class="hero-meta-item">
+          <span class="icon material-symbols-outlined">work</span>
+          Product & UX Design
+        </div>
+        <div class="hero-meta-item">
+          <span class="icon material-symbols-outlined">schedule</span>
+          2026
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      Scroll to explore
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ==================== PROBLEM ==================== -->
+  <section id="problem">
+    <div class="container">
+      <div class="problem-grid reveal">
+        <div class="problem-text">
+          <span class="section-label">The Problem</span>
+          <h2>A strong feature, undermined by a hard first mile</h2>
+          <p>
+            Nubra's Strategy Builder is a genuine differentiator — 40+ pre-built strategies, native payoff diagrams, four trading modes. <span class="highlight">Zerodha Kite has no native equivalent</span> at all; it requires a separate paid Sensibull subscription to get the same payoff graphs.
+          </p>
+          <p>
+            App Store reviews back this up — the builder itself gets praised ("every option seller must try it"). But nothing in the current flow helps a trader who has never built a multi-leg strategy before. <span class="highlight">There's no guided or logic-based path</span> for someone who doesn't yet know how to pick each leg's strike manually.
+          </p>
+          <p>
+            Dhan's "Quant Mode" shows this gap is fillable — logic-based leg selection already exists elsewhere in the market. The question this case study answers: <span class="highlight">how much of Nubra's own beginner drop-off is this gap actually costing</span>, and is a guided mode worth building?
+          </p>
+        </div>
+        <div>
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">% completion rate for Beginner-segment users in the current, Advanced-only builder (synthetic, benchmark-grounded)</div>
+          </div>
+          <div class="stat-card" style="margin-top: var(--space-lg);">
+            <div class="stat-number">61</div>
+            <div class="stat-label">% of Beginners who select a strategy template — then drop to 29% at leg configuration, the single biggest step-loss in the funnel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMPETITOR BENCHMARK ==================== -->
+  <section class="evidence-section" id="benchmark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Competitor Benchmark</span>
+        <h2>Where Nubra sits today</h2>
+        <p>Sourced from real app listings and public comparison articles — not assumed.</p>
+      </div>
+
+      <div class="reveal" style="overflow-x:auto;">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Native strategy builder?</th>
+              <th>Payoff diagram</th>
+              <th>Beginner / guided mode</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td><strong>Nubra</strong></td>
+              <td><span class="pill pill-good">Yes, native</span></td>
+              <td><span class="pill pill-good">Yes</span></td>
+              <td><span class="pill pill-bad">Not evident</span></td>
+              <td>40+ pre-built strategies, 4 trading modes (Buyer / Seller / OI Trader / Investor)</td>
+            </tr>
+            <tr>
+              <td>Zerodha Kite</td>
+              <td><span class="pill pill-bad">No — basket orders only</span></td>
+              <td><span class="pill pill-bad">No — requires paid Sensibull (~₹800/mo)</span></td>
+              <td><span class="pill pill-bad">No</span></td>
+              <td>Manual leg-by-leg order entry without Sensibull</td>
+            </tr>
+            <tr>
+              <td>Dhan (Options Trader)</td>
+              <td><span class="pill pill-good">Yes, native</span></td>
+              <td><span class="pill pill-good">Yes + POP, live Greeks</span></td>
+              <td><span class="pill pill-good">Yes — "Quant Mode"</span></td>
+              <td>Logic-based leg selection (e.g. by Delta, ATM points) — most advanced on-ramp for less experienced sellers</td>
+            </tr>
+            <tr>
+              <td>Groww (915 terminal)</td>
+              <td><span class="pill pill-good">Yes, native</span></td>
+              <td><span class="pill pill-good">Yes</span></td>
+              <td><span class="pill pill-bad">Not evident</span></td>
+              <td>Dedicated F&O terminal, separate from the main app</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="method-note reveal" style="margin-top: var(--space-2xl);">
+        <span class="method-note-icon">📊</span>
+        <p>
+          <strong>Takeaway:</strong> Nubra is already ahead of Zerodha on the core feature. The gap isn't capability — it's onramp. Dhan's Quant Mode proves a guided, logic-based path is buildable and already exists in the market; Nubra just doesn't have one yet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TARGET USER / JOURNEY / FUNNEL ==================== -->
+  <section id="journey">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Target User & Current Funnel</span>
+        <h2>Meet Aisha — and where she drops off</h2>
+        <p>She downloaded Nubra for zero-brokerage equity delivery, has placed a handful of single-leg option trades, and has never built a multi-leg strategy. She opens the Strategy Builder after seeing "Iron Condor" mentioned in a trading Telegram group — then leaves without placing an order.</p>
+      </div>
+
+      <div class="chart-card reveal">
+        <img src="charts/funnel-by-segment.png" alt="Line chart of the Multi-Leg Strategy Builder funnel by trader experience level — Beginner, Intermediate, and Advanced — from Viewed Builder through Placed Order, showing Beginners dropping from 61% to 29% between Selected Template and Configured Legs" loading="lazy">
+        <p class="chart-caption">Synthetic funnel, calibrated to sit within published fintech onboarding benchmarks (Section 8 of the notebook) — not real Nubra data. The point is the method, not the exact numbers.</p>
+      </div>
+
+      <div class="method-note reveal" style="margin-top: var(--space-xl);">
+        <span class="method-note-icon">🔍</span>
+        <p>
+          <strong>Biggest single-step drop for Beginners:</strong> "Selected Template" (61%) → "Configured Legs" (29%) — exactly the step Guided Mode targets. It removes manual leg configuration entirely for the recommended-strategy path.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRD ==================== -->
+  <section class="principles-section" id="prd">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Product Requirements</span>
+        <h2>What "Guided Mode" actually ships</h2>
+        <p>Goal: increase first-time Beginner-segment completion of a multi-leg build, without adding friction for Intermediate/Advanced users who don't need it.</p>
+      </div>
+
+      <div class="principles-grid">
+        <div class="principle-card reveal reveal-delay-1">
+          <div class="principle-number">01</div>
+          <h3>A new, optional entry point</h3>
+          <p>A "Guided Mode" toggle on the Strategy Builder landing screen — on by default for Beginner-segment users, off by default (but available) for everyone else.</p>
+        </div>
+
+        <div class="principle-card reveal reveal-delay-2">
+          <div class="principle-number">02</div>
+          <h3>A 3-step wizard, not a form</h3>
+          <p>Market view → risk appetite → 2-3 recommended strategies, each with a one-line plain-language explanation ("Iron Condor: profits if the stock stays in a range, limited risk both ways").</p>
+        </div>
+
+        <div class="principle-card reveal reveal-delay-3">
+          <div class="principle-number">03</div>
+          <h3>Same builder underneath</h3>
+          <p>Picking a recommended strategy pre-fills the existing Advanced Builder with every leg already set. The Advanced Builder itself is untouched for anyone who skips Guided Mode.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== REDESIGNED FLOW ==================== -->
+  <section id="redesign">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">The Redesign</span>
+        <h2>Six screens from pain point to placed order</h2>
+        <p>Each screen maps to a specific step in the PRD and a specific point in the funnel above.</p>
+      </div>
+
+      <!-- ===== SCREEN 1: Current Builder (Pain Point) ===== -->
+      <div class="screen-row reveal">
+        <div class="screen-info">
+          <span class="screen-step-badge">
+            <span class="material-symbols-outlined" style="font-size:14px">warning</span>
+            Before · The Drop-off Point
+          </span>
+          <h3>Today: the Advanced Builder, with no guidance</h3>
+          <p>
+            A first-time user lands on the same leg-by-leg configuration screen as an experienced seller — <strong>pick a strike, pick a type, pick a quantity, for every leg</strong>, with no help deciding what any of it should be.
+          </p>
+          <p>
+            This is where Beginners fall from 61% to 29% in the funnel above. Nothing in this screen is broken — it's simply built for a trader who already knows what they're doing.
+          </p>
+          <div class="design-note">
+            <span class="note-icon material-symbols-outlined" style="font-size:16px">lightbulb</span>
+            <span><strong>Design rationale:</strong> Showing this screen first, unmodified, makes the gap concrete rather than abstract — the redesign isn't replacing this builder, it's giving Beginners a way to arrive at it already filled in.</span>
+          </div>
+          <a class="figma-link" href="https://www.figma.com/design/M63PY6gp4W72lUhAD3aGKY/Untitled?node-id=1-2&t=C7nLLQO0K4F7uaIn-1" target="_blank" rel="noopener">
+            <span class="figma-icon">🎨</span> View this screen in Figma ↗
+          </a>
+        </div>
+        <div class="screen-phone-wrapper">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <img src="screens/screen1-current-builder.png" alt="Current Advanced Builder screen — manual leg-by-leg strike, type, and quantity selection with no guidance for a first-time user" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SCREEN 2: Guided Mode Toggle ===== -->
+      <div class="screen-row reverse reveal">
+        <div class="screen-info">
+          <span class="screen-step-badge">
+            <span class="material-symbols-outlined" style="font-size:14px">toggle_on</span>
+            Step 1 · New Entry Point
+          </span>
+          <h3>Strategy Builder landing, with Guided Mode</h3>
+          <p>
+            A toggle sits at the top of the existing landing screen — <strong>on by default for Beginner-segment users</strong>, discoverable and switchable for everyone else. Nothing about the Advanced path changes for traders who don't need this.
+          </p>
+          <div class="design-note">
+            <span class="note-icon material-symbols-outlined" style="font-size:16px">lightbulb</span>
+            <span><strong>Design rationale:</strong> A toggle, not a separate app section — Guided Mode has to feel like a setting on the same builder, not a beginner-only product that experienced users would never open.</span>
+          </div>
+          <a class="figma-link" href="https://www.figma.com/design/M63PY6gp4W72lUhAD3aGKY/Untitled?node-id=1-304&t=C7nLLQO0K4F7uaIn-1" target="_blank" rel="noopener">
+            <span class="figma-icon">🎨</span> View this screen in Figma ↗
+          </a>
+        </div>
+        <div class="screen-phone-wrapper">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <img src="screens/screen2-guided-toggle.png" alt="Strategy Builder landing screen with a Guided Mode toggle, on by default for Beginner-segment users" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SCREEN 3: Market View ===== -->
+      <div class="screen-row reveal">
+        <div class="screen-info">
+          <span class="screen-step-badge">
+            <span class="material-symbols-outlined" style="font-size:14px">trending_up</span>
+            Step 2 · Wizard, Screen 1 of 3
+          </span>
+          <h3>What's your market view?</h3>
+          <p>
+            Bullish, bearish, or neutral — <strong>one tap, plain language</strong>, no jargon about deltas or IV up front. This is the first of the two inputs that narrow 40+ strategies down to 2-3 relevant ones.
+          </p>
+          <div class="design-note">
+            <span class="note-icon material-symbols-outlined" style="font-size:16px">lightbulb</span>
+            <span><strong>Design rationale:</strong> A progress indicator (Step 1 of 3) is visible from the first screen, so Aisha knows exactly how far she is from a recommendation — no open-ended form.</span>
+          </div>
+          <a class="figma-link" href="https://www.figma.com/design/M63PY6gp4W72lUhAD3aGKY/Untitled?node-id=3-182&t=C7nLLQO0K4F7uaIn-1" target="_blank" rel="noopener">
+            <span class="figma-icon">🎨</span> View this screen in Figma ↗
+          </a>
+        </div>
+        <div class="screen-phone-wrapper">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <img src="screens/screen3-market-view.png" alt="Guided Mode wizard step 1 of 3 — market view selection between bullish, bearish, and neutral, in plain language" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SCREEN 4: Risk Appetite ===== -->
+      <div class="screen-row reverse reveal">
+        <div class="screen-info">
+          <span class="screen-step-badge">
+            <span class="material-symbols-outlined" style="font-size:14px">shield</span>
+            Step 3 · Wizard, Screen 2 of 3
+          </span>
+          <h3>How much risk do you want to carry?</h3>
+          <p>
+            Limited risk, limited reward vs. higher risk, higher reward — <strong>framed as a trade-off, not a technical parameter</strong>. Combined with market view, this pair of answers is enough to shortlist strategies.
+          </p>
+          <div class="design-note">
+            <span class="note-icon material-symbols-outlined" style="font-size:16px">lightbulb</span>
+            <span><strong>Design rationale:</strong> Only two inputs before a recommendation — every extra question is another point where a first-time user can abandon the wizard, so the PRD deliberately keeps this to the minimum needed to narrow strategies meaningfully.</span>
+          </div>
+          <a class="figma-link" href="https://www.figma.com/design/M63PY6gp4W72lUhAD3aGKY/Untitled?node-id=2-3&t=C7nLLQO0K4F7uaIn-1" target="_blank" rel="noopener">
+            <span class="figma-icon">🎨</span> View this screen in Figma ↗
+          </a>
+        </div>
+        <div class="screen-phone-wrapper">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <img src="screens/screen4-risk-appetite.png" alt="Guided Mode wizard step 2 of 3 — risk appetite selection between limited risk / limited reward and higher risk / higher reward" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SCREEN 5: Recommended Strategies (HERO) ===== -->
+      <div class="screen-row reveal">
+        <div class="screen-info">
+          <span class="screen-step-badge">
+            <span class="material-symbols-outlined" style="font-size:14px">auto_awesome</span>
+            Step 4 · Hero Screen
+          </span>
+          <h3>2-3 recommended strategies, explained</h3>
+          <p>
+            Each recommendation is a card with a <strong>name, a one-line plain-language explanation, and a mini payoff shape</strong> — not a list of strategy names Aisha has to look up herself.
+          </p>
+          <p>
+            This is the payoff of the whole wizard: the moment "Iron Condor" (the term that got her curious in the first place) becomes something she understands well enough to act on.
+          </p>
+          <div class="design-note">
+            <span class="note-icon material-symbols-outlined" style="font-size:16px">lightbulb</span>
+            <span><strong>Design rationale:</strong> A tiny payoff-shape thumbnail on each card gives visual recognition without requiring the user to read a full payoff diagram yet — that comes after they pick one.</span>
+          </div>
+          <a class="figma-link" href="https://www.figma.com/design/M63PY6gp4W72lUhAD3aGKY/Untitled?node-id=3-369&t=C7nLLQO0K4F7uaIn-1" target="_blank" rel="noopener">
+            <span class="figma-icon">🎨</span> View this screen in Figma ↗
+          </a>
+        </div>
+        <div class="screen-phone-wrapper">
+          <div class="phone-mockup" style="position:relative;">
+            <span class="hero-screen-tag">Hero Screen</span>
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <img src="screens/screen5-recommended-strategies.png" alt="Guided Mode wizard step 3 of 3 — 2 to 3 recommended strategy cards, each with a plain-language explanation and a mini payoff-shape thumbnail" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SCREEN 6: Pre-filled Builder (HERO) ===== -->
+      <div class="screen-row reverse reveal">
+        <div class="screen-info">
+          <span class="screen-step-badge">
+            <span class="material-symbols-outlined" style="font-size:14px">check_circle</span>
+            Step 5 · Hero Screen
+          </span>
+          <h3>The same builder — already filled in</h3>
+          <p>
+            Tapping a recommended strategy lands Aisha back on the <strong>exact Advanced Builder from Screen 1</strong> — except every leg is already set, and the payoff diagram is already visible.
+          </p>
+          <p>
+            This is the design decision that makes Guided Mode low-risk to ship: there's no second builder to maintain. Guided Mode is only ever a faster way into the one that already exists.
+          </p>
+          <div class="design-note">
+            <span class="note-icon material-symbols-outlined" style="font-size:16px">lightbulb</span>
+            <span><strong>Design rationale:</strong> Aisha can still edit any leg from here — Guided Mode hands her a starting point, not a locked-in decision. That matters for trust: an AI-adjacent recommendation should always stay editable.</span>
+          </div>
+          <a class="figma-link" href="https://www.figma.com/design/M63PY6gp4W72lUhAD3aGKY/Untitled?node-id=3-579&t=C7nLLQO0K4F7uaIn-1" target="_blank" rel="noopener">
+            <span class="figma-icon">🎨</span> View this screen in Figma ↗
+          </a>
+        </div>
+        <div class="screen-phone-wrapper">
+          <div class="phone-mockup" style="position:relative;">
+            <span class="hero-screen-tag">Hero Screen</span>
+            <div class="phone-screen">
+              <div class="phone-screen-inner">
+                <img src="screens/screen6-prefilled-builder.png" alt="Advanced Builder screen with all legs pre-filled from the recommended strategy, payoff diagram already visible, and every leg still editable" style="width:100%; height:auto; display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== RESULTS: FUNNEL + A/B ==================== -->
+  <section class="evidence-section" id="results">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Validating the Recommendation</span>
+        <h2>Would Guided Mode actually move the number?</h2>
+        <p>A synthetic A/B simulation, sized and interpreted the way a real experiment would be — including the ways a single result can mislead.</p>
+      </div>
+
+      <div class="chart-card reveal">
+        <img src="charts/ab-completion-comparison.png" alt="Bar chart comparing Beginner completion rate between Control (Advanced-only builder, 10.0%) and Treatment (Guided Mode, 21.6%) with 95% Wilson confidence intervals, non-overlapping" loading="lazy">
+        <p class="chart-caption">Single simulated draw: 10.0% (control) vs. 21.6% (treatment), n=500/arm, chi-square p&lt;0.0001. 95% CIs don't overlap.</p>
+      </div>
+
+      <div class="method-note reveal" style="margin: var(--space-2xl) 0;">
+        <span class="method-note-icon">⚠️</span>
+        <p>
+          <strong>Being honest about that +116% headline:</strong> that's the lift from one specific random draw. Repeating the exact same simulation 2,000 times (holding the true assumed rates fixed at 11% → 19%) shows the median observed lift is actually +73%, much closer to the true +72.7% the assumption implies. A single A/B run can overstate — or understate — the real effect by a wide margin.
+        </p>
+      </div>
+
+      <div class="chart-card reveal">
+        <img src="charts/ab-distribution.png" alt="Histogram of p-values and observed lifts across 2,000 repeated simulations of the same A/B test, showing the single headline draw as an outlier relative to the median" loading="lazy">
+        <p class="chart-caption">2,000 repeated simulations of the same test. 93.8% land below p=0.05 — but the observed lift varies widely around the true +72.7%.</p>
+      </div>
+
+      <div class="chart-card reveal">
+        <img src="charts/sensitivity-analysis.png" alt="Two bar charts: required sample size per group at 80% power across a range of assumed lifts, and achieved power at n=500 per group across the same range, showing n=500 is well-powered at the optimistic +72.7% lift but badly underpowered at a more conservative +30% lift" loading="lazy">
+        <p class="chart-caption">n=500/group is well-powered (94.4%) at the optimistic +72.7% lift — but only 34.8% powered at a more conservative +30% lift, which is the honest argument for sizing the real experiment larger.</p>
+      </div>
+
+      <div class="reveal" style="overflow-x:auto; margin-top: var(--space-2xl);">
+        <table class="benchmark-table">
+          <thead>
+            <tr><th>Metric</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Beginner completion rate (current, Advanced-only builder)</td><td>10.2%</td></tr>
+            <tr><td>Biggest single-step drop for Beginners</td><td>Selected Template (61%) → Configured Legs (29%)</td></tr>
+            <tr><td>A/B test: Control / Treatment completion (single draw, n=500/arm)</td><td>10.0% / 21.6%, p&lt;0.0001</td></tr>
+            <tr><td>True assumed rates (control → treatment)</td><td>11% → 19% (true lift: +72.7%)</td></tr>
+            <tr><td>Required n/group for the true +72.7% lift at 80% power</td><td>312 (n=500 was adequate)</td></tr>
+            <tr><td>Power at n=500 if the true lift is only +30%</td><td>34.8% (badly underpowered)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="method-note reveal" style="margin-top: var(--space-2xl);">
+        <span class="method-note-icon">✅</span>
+        <p>
+          <strong>Recommendation:</strong> ship Guided Mode as opt-in (default-on for new/Beginner-segment users) — but size the real experiment for a conservative +30-50% lift, not the optimistic +116% a single simulated draw happened to show. That means ~700-1,800 Beginner-segment users per arm, sticky-bucketed at first Strategy Builder open, measured on completion rate (viewed → placed order) at α=0.05.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== REFLECTION ==================== -->
+  <section class="reflection-section" id="reflection">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Reflection</span>
+        <h2>Next steps & what this doesn't answer yet</h2>
+        <p>This case study is scoped to secondary research, methodology, and concept design. Here's how I'd extend it.</p>
+      </div>
+
+      <div class="reflection-grid reveal">
+        <div class="reflection-card">
+          <h3>🔍 Primary research phase</h3>
+          <ul>
+            <li>Usability testing the 3-step wizard with genuine first-time options traders — does "market view → risk appetite" actually map to how they think about a trade?</li>
+            <li>Interviews with users who abandoned the current Advanced Builder, to confirm leg configuration (not template selection) is really the point of friction</li>
+            <li>Testing the plain-language strategy explanations for comprehension, not just tone — a misunderstood payoff description carries real financial risk</li>
+            <li>Real event-log analysis to replace the synthetic funnel once instrumentation exists</li>
+          </ul>
+        </div>
+
+        <div class="reflection-card">
+          <h3>🎯 Design & experiment iteration</h3>
+          <ul>
+            <li>Size the real A/B test for the conservative +30-50% lift range identified in the power analysis, not the optimistic single-draw result</li>
+            <li>Edge cases: what happens when none of the 2-3 recommended strategies fit well, or the user wants to see all matches</li>
+            <li>Decide whether Guided Mode should ever surface for Intermediate users near the funnel's mid-drop-off, not just Beginners</li>
+            <li>RBI/SEBI disclosure review — any plain-language strategy explanation in a trading app needs a compliance pass before it ships</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="method-note reveal">
+        <span class="method-note-icon">📋</span>
+        <p>
+          <strong>A note on the data:</strong> the funnel and A/B numbers in this case study are synthetic, generated from probabilities calibrated to sit within published fintech onboarding and activation benchmarks (linked in the notebook) — not real Nubra data, which isn't publicly available. The point of this project is the methodology: how to define, size, and honestly interpret an experiment like this — not the specific numbers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Designed by <span class="name">Neha Malik</span> · 2026<br>
+        Reducing beginner drop-off in options strategy building — a product case study
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
